@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="ru">
   <head>
@@ -5,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Music House</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
   </head>
   <body>
 
@@ -50,8 +54,8 @@
                     <label class="form-check-label" for="SingInCheck1">Показать пароль</label>
                 </div>
                 <div class="modal-footer"> 
-                   <button type="submit" class="btn btn-outline-secondary" style="margin-top: 1.5rem; margin-left: 40%; margin-right: 40%;">Войти</button>;
-              </div>
+                   <button type="submit" class="btn btn-outline-secondary" style="margin-top: 1.5rem; margin-left: 40%; margin-right: 40%;">Войти</button>
+                </div>
             </form>
           </div>
         </div>
@@ -91,8 +95,12 @@
                     <input type="email" name="email" class="form-control" id="email" aria-describedby="emaillHelp" placeholder="email">
                 </div>
                 <div class="form-group" style="margin-top: 1.5rem;">
-                    <label for="registrationInputPassword1">Пароль</label>
+                    <label for="registrationInputPassword">Пароль</label>
                     <input type="password" name="password" class="form-control" id="Password" placeholder="Пароль">
+                </div>
+                <div class="form-group" style="margin-top: 1.5rem;">
+                    <label for="registrationInputPassword_confirm">Повторите пароль</label>
+                    <input type="password_confirm" name="password_confirm" class="form-control" id="Password_confirm" placeholder="Повторите пароль">
                 </div>
                 <div class="form-check" style="margin-top: 1.5rem;">
                     <input type="checkbox" class="form-check-input" id="registrationCheck">
@@ -101,6 +109,9 @@
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-outline-secondary" style="margin-top: 1.5rem; margin-left: 40%; margin-right: 40%;">Зарегистрировать</button>
                 </div>
+                <p class="msg">
+                  <?= $_SESSION['message'] ?>
+                </p>
             </form>
           </div>
         </div>

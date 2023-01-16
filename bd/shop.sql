@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Янв 15 2023 г., 18:33
+-- Время создания: Янв 16 2023 г., 19:22
 -- Версия сервера: 8.0.30
 -- Версия PHP: 7.2.34
 
@@ -64,6 +64,7 @@ CREATE TABLE `user` (
   `login` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
+  `password_confirm` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `role` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
