@@ -109,8 +109,12 @@ session_start();
                 <div class="modal-footer">
                   <button type="submit" class="btn btn-outline-secondary" style="margin-top: 1.5rem; margin-left: 40%; margin-right: 40%;">Зарегистрировать</button>
                 </div>
-                <p class="msg">
-                  <?= $_SESSION['message'] ?>
+                  <?php 
+                    if ($_SESSION['message']){
+                      echo '<p class="msg">' . $_SESSION['message'] . '</p>';
+                  }
+                    unset($_SESSION['message']);
+                    ?>
                 </p>
             </form>
           </div>
